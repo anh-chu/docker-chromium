@@ -8,7 +8,10 @@ services:
       - PGID=1000
       - TZ=Asia/Ho_Chi_Minh
       - CHROME_CLI=example.com
+    volumes:
+      - ${CONFIG_DIR}:/config
     ports:
+      - 3000:3000
       - 3001:3001
       - 9222:9222
     shm_size: "1gb"
