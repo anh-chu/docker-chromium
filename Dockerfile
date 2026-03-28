@@ -20,7 +20,8 @@ RUN \
   apt-get update && \
   apt-get install -y --no-install-recommends \
     chromium \
-    chromium-l10n && \
+    chromium-l10n \
+    socat && \
   echo "**** cleanup ****" && \
   apt-get autoclean && \
   rm -rf \
@@ -33,6 +34,6 @@ RUN \
 COPY /root /
 
 # ports and volumes
-EXPOSE 3000
+EXPOSE 3000 9222
 
 VOLUME /config
