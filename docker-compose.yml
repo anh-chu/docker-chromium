@@ -1,0 +1,15 @@
+services:
+  chromium:
+    build: .
+    image: anh-chu/docker-chromium
+    container_name: chromium
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Ho_Chi_Minh
+      - CHROME_CLI=example.com
+    ports:
+      - 3001:3001
+      - 9222:9222
+    shm_size: "1gb"
+    restart: always
